@@ -1,0 +1,13 @@
+name = raw_input("Enter file:")
+if len(name) < 1 : name = "mbox-short.txt"
+handle = open(name)
+#print handle.read()
+count = 0
+y=[]
+for line in handle:
+    if line.startswith('From '):
+    	count=count+1
+    	y.append(line.split()[1])
+from collections import Counter
+data = Counter(y)
+print data.most_common(1)[0][0],data[data.most_common(1)[0][0]]
