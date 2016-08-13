@@ -1,0 +1,11 @@
+fname = raw_input("Enter file name: ")
+fh = open(fname)
+lst = list()
+x=fh.read()
+for line in x.split():
+    if line in lst:
+    	y=0
+    else:
+    	lst.append(line)
+#t= lst.sort()
+print sorted(lst)
