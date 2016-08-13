@@ -1,0 +1,4 @@
+text = "X-DSPAM-Confidence:    0.8475";
+text1=text.find(':')
+text2=text[text1+1:]
+print float(text2)
