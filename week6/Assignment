@@ -1,0 +1,18 @@
+name = raw_input("Enter file:")
+if len(name) < 1 : name = "mbox-short.txt"
+handle = open(name)
+count = 0
+y=[]
+for line in handle:
+    if line.startswith('From '):
+    	count=count+1
+    	y.append(line.split()[5])
+x=sorted(y)
+r=[]
+for i in range(len(x)):
+	r.append(x[i].split(':')[0]) 
+f=set(r)
+from collections import Counter
+data = Counter(r)
+for j in f:
+    print '%s %d' % (j, data[j])
